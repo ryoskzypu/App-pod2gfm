@@ -13,7 +13,6 @@ use File::Spec         ();
 use Getopt::Long::More qw< GetOptionsFromArray optspec >;
 use Pod::Usage;
 use Pod::Markdown::Githubert 0.05;
-use DDP;  # TODO: Remove (debugging only).
 
 our $VERSION = 'v1.0.0';
 
@@ -35,15 +34,13 @@ method init (@argv)
 
 method run ()
 {
-    #p $self;
     my $start = 1;  # Process STDIN.
+
     while ( $start || @_argv ) {
         $start = 0 if $start;
-        #p @_argv;
         $self->_convert_md if $self->_set_handles == 0;
     }
 
-    #p $self;
     return 0;
 }
 

@@ -22,7 +22,6 @@ use App::pod2gfm;
 use File::Spec::Functions qw< catdir >;
 use Capture::Tiny         qw< capture_stdout capture_stderr >;
 use Path::Tiny;
-use DDP;  # TODO: Remove
 
 my %DEFAULTS = (
     class => 'App::pod2gfm',
