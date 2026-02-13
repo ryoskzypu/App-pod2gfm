@@ -1,3 +1,6 @@
+[![CI](https://github.com/ryoskzypu/App-pod2gfm/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/ryoskzypu/App-pod2gfm/actions/workflows/ci.yml)
+[![Coverage Status](https://coveralls.io/repos/github/ryoskzypu/App-pod2gfm/badge.svg?branch=main)](https://coveralls.io/github/ryoskzypu/App-pod2gfm?branch=main)
+
 # App::pod2gfm
 
 **pod2gfm** is a command-line utility based on [pod2markdown](https://metacpan.org/pod/pod2markdown)
