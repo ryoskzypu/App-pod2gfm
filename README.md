@@ -34,6 +34,7 @@ You can find documentation for this module in [docs](docs/) or with the
 `perldoc` command (after installing):
 
 ```shell
+$ perldoc pod2gfm
 $ perldoc App::pod2gfm
 ```
 
