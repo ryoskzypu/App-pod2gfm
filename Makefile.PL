@@ -42,7 +42,6 @@ my %WriteMakefileArgs = (
                     eg
                     examples
                     share
-                    t
                     xt
                 >
             ],
