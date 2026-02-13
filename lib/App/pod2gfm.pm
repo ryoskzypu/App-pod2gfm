@@ -14,7 +14,7 @@ use Getopt::Long::More qw< GetOptionsFromArray optspec >;
 use Pod::Usage;
 use Pod::Markdown::Githubert 0.05;
 
-our $VERSION = 'v1.0.0';
+our $VERSION = 'v1.0.1';
 
 my $PROG = basename($0);
 
@@ -208,7 +208,7 @@ sub _exit ($code)
 
 =head1 NAME
 
-App::pod2gfm - core implementation for pod2gfm
+App::pod2gfm - convert POD to GitHub Flavored Markdown
 
 =head1 SYNOPSIS
 

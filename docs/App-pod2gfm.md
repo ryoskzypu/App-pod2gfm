@@ -1,6 +1,6 @@
 # NAME
 
-App::pod2gfm - core implementation for pod2gfm
+App::pod2gfm - convert POD to GitHub Flavored Markdown
 
 # SYNOPSIS
 
