@@ -23,7 +23,7 @@ field %_opts    :reader;
 field %_gh_opts :reader = ( output_encoding => 'UTF-8' );  # Pod::Markdown::Githubert options
 field $_infile  :reader;
 field $_outfile :reader;
-field $_stdin_cnt = 0;
+field $_has_stdin = false;
 
 method init (@argv)
 {
@@ -34,10 +34,10 @@ method init (@argv)
 
 method run ()
 {
-    my $start = 1;  # Process STDIN.
+    my $start = true;  # Process STDIN.
 
     while ( $start || @_argv ) {
-        $start = 0 if $start;
+        $start = false     if $start;
         $self->_convert_md if $self->_set_handles == 0;
     }
 
@@ -118,9 +118,9 @@ method _get_infile ()
     my $in_fh;
     my $infile = shift @_argv;
 
-    if ( $_stdin_cnt == 0 && ( !defined $infile || $infile eq '-' ) ) {
+    if ( $_has_stdin eq false && ( !defined $infile || $infile eq '-' ) ) {
         $in_fh      = *STDIN;  # Read STDIN.
-        $_stdin_cnt = 1;       # Only one STDIN is allowed per process.
+        $_has_stdin = true;    # Only one STDIN is allowed per process.
     }
     else {
         open my $fh, '<', $infile
