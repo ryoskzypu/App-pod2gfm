@@ -3,10 +3,9 @@ use v5.40.0;
 use strict;
 use warnings;
 
-use Object::Pad 0.800;
+use Object::Pad 0.825;
 
 package App::pod2gfm;  # For toolchain compatibility.
-
 class App::pod2gfm;
 
 use File::Basename qw< basename >;

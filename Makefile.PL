@@ -19,17 +19,17 @@ my %WriteMakefileArgs = (
         'ExtUtils::MakeMaker' => '6.64',
     },
     TEST_REQUIRES => {
-        'Capture::Tiny'         => '0',
+        'Capture::Tiny'         => '0.50',
         'File::Spec'            => '0',
         'File::Spec::Functions' => '0',
-        'Path::Tiny'            => '0',
+        'Path::Tiny'            => '0.150',
         'Test2::V1'             => '0',
 
     },
     PREREQ_PM => {
         'File::Basename'           => '0',
         'File::Spec'               => '0',
-        'Object::Pad'              => '0.800',
+        'Object::Pad'              => '0.825',
         'Pod::Markdown::Githubert' => '0.05',
         'Pod::Usage'               => '0',
     },
@@ -51,6 +51,7 @@ my %WriteMakefileArgs = (
                     'App::CPANTS::Lint' => '0',
                     'Data::Printer'     => '0',
                     'Devel::Cover'      => '0',
+                    'Devel::NYTProf'    => '0',
                     'Perl::Critic'      => '0',
                     'Perl::Tidy'        => '0',
                 },
