@@ -1,4 +1,4 @@
-#!/usr/bin/env perl
+#!perl
 #
 # Test every component of App::pod2gfm to ensure correct behavior. App::pod2gfm
 # must run as documented in its POD (and its wrapper POD).
