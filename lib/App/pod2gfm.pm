@@ -13,7 +13,7 @@ use File::Spec     ();
 use Pod::Usage;
 use Pod::Markdown::Githubert 0.05;
 
-our $VERSION = 'v1.0.1';
+our $VERSION = 'v1.1.0';
 
 my $PROG = basename($0);
 
