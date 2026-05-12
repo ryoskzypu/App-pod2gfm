@@ -6,11 +6,11 @@ use warnings;
 use Object::Pad 0.800;
 
 package App::pod2gfm;  # For toolchain compatibility.
+
 class App::pod2gfm;
 
-use File::Basename     qw< basename >;
-use File::Spec         ();
-use Getopt::Long::More qw< GetOptionsFromArray optspec >;
+use File::Basename qw< basename >;
+use File::Spec     ();
 use Pod::Usage;
 use Pod::Markdown::Githubert 0.05;
 
@@ -58,28 +58,58 @@ method _process_opts ( $argv = undef )
         warn "$PROG: $msg\n";
     };
 
-    Getopt::Long::More::Configure(
-        qw<
-            default
-            gnu_getopt
-            no_ignore_case
-        >
-    );
+    # Bash completion
+    try {
+        require Getopt::Long::More;
+
+        Getopt::Long::More->VERSION('0.007');
+        Getopt::Long::More->import( qw< GetOptionsFromArray optspec > );
+
+        Getopt::Long::More::Configure(
+            qw<
+                default
+                gnu_getopt
+                no_ignore_case
+            >
+        );
+    }
+    catch ($e) {
+        # Use Getopt::Long as fallback.
+        require Getopt::Long;
+
+        Getopt::Long->import(
+            qw<
+                GetOptionsFromArray
+                :config
+                default
+                gnu_getopt
+                no_ignore_case
+            >
+        );
+    }
 
     GetOptionsFromArray(
         $argv,
-        'a|auto'             => \$_opts{auto},
-        'e|file-extension=s' => optspec(
+        'a|auto' => \$_opts{auto},
+
+        'e|file-extension=s' => defined &Getopt::Long::More::optspec
+        ? optspec(
             destination => \$_opts{file_ext},
             completion  => [ qw< markdown > ],
-        ),
+          )
+        : \$_opts{file_ext},
+
         'no-strip-ext'         => \$_opts{no_strip_ext},
         't|target-directory=s' => \$_opts{target_dir},
         'force'                => \$_opts{force},
-        'hl-language=s'        => optspec(
+
+        'hl-language=s' => defined &Getopt::Long::More::optspec
+        ? optspec(
             destination => \$_gh_opts{hl_language},
             completion  => [ qw< perl > ],
-        ),
+          )
+        : \$_gh_opts{hl_language},
+
         'man-url-prefix=s'     => \$_gh_opts{man_url_prefix},
         'perldoc-url-prefix=s' => \$_gh_opts{perldoc_url_prefix},
         'h|help'               => sub { pod2usage( -exitval => 0, -verbose => 0 ) },

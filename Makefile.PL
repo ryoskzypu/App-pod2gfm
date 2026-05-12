@@ -29,7 +29,6 @@ my %WriteMakefileArgs = (
     PREREQ_PM => {
         'File::Basename'           => '0',
         'File::Spec'               => '0',
-        'Getopt::Long::More'       => '0',
         'Object::Pad'              => '0.800',
         'Pod::Markdown::Githubert' => '0.05',
         'Pod::Usage'               => '0',
@@ -62,6 +61,11 @@ my %WriteMakefileArgs = (
                     'Test::Pod'           => '0',
                     'Test::Pod::Coverage' => '0',
                     'Test::Spelling'      => '0',
+                },
+            },
+            runtime => {
+                recommends => {
+                    'Getopt::Long::More' => '0.007',
                 },
             },
         },

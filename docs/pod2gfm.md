@@ -112,6 +112,8 @@ in the shell or add it to a bash startup file (e.g. `/etc/bash.bashrc` or `~/.ba
 complete -C pod2gfm pod2gfm
 ```
 
+Note that [Getopt::Long::More](https://metacpan.org/pod/Getopt%3A%3ALong%3A%3AMore) is required.
+
 # EXIT STATUS
 
 ```
