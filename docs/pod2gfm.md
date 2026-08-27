@@ -124,7 +124,7 @@ Note that [Getopt::Long::More](https://metacpan.org/pod/Getopt%3A%3ALong%3A%3AMo
 
 # BUGS
 
-Report bugs at [https://github.com/author/App-pod2gfm/issues](https://github.com/author/App-pod2gfm/issues).
+Report bugs at [https://github.com/ryoskzypu/App-pod2gfm/issues](https://github.com/ryoskzypu/App-pod2gfm/issues).
 
 # AUTHOR
 
