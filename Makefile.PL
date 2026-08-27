@@ -82,6 +82,7 @@ my %WriteMakefileArgs = (
             },
         },
         x_contributors => [
+            q{Lukas Mai <lmai at web.de>},
             q{ryoskzypu <ryoskzypu@proton.me>},
         ],
         x_spdx_expression => 'MIT-0',
