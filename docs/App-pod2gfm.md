@@ -55,6 +55,7 @@ following:
 
 - File access/permission issues.
 - Invalid command-line options.
+- [Pod::Markdown](https://metacpan.org/pod/Pod%3A%3AMarkdown) or [Pod::Simple](https://metacpan.org/pod/Pod%3A%3ASimple) errors.
 
 See ["EXIT-STATUS" in pod2gfm](https://metacpan.org/pod/pod2gfm#EXIT-STATUS) for exit code details.
 
